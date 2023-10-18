@@ -29,6 +29,33 @@ import kotlinx.coroutines.launch
 /**
  * Created By Kevin Zou On 2023/10/18
  */
+@OptIn(ExperimentalMaterialApi::class)
+@Composable
+fun BasicSwipeBoxSample() {
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(horizontal = 15.dp),
+        verticalArrangement = Arrangement.Center,
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        SwipeBoxAtEnd()
+        Spacer()
+        SwipeBoxAtStart()
+        Spacer()
+        SwipeBoxAtEnd2()
+        Spacer()
+        SwipeBoxAtBoth()
+        Spacer()
+        SwipeBoxWithText()
+        Spacer()
+    }
+}
+
+@Composable
+fun Spacer() {
+    Spacer(modifier = Modifier.height(15.dp))
+}
 
 @Composable
 fun mainContent(text: String = "Main Content", onClick: (() -> Unit)? = null) {
