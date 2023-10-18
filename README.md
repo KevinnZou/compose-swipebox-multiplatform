@@ -1,6 +1,6 @@
 # SwipeBox for JetBrains Compose Multiplatform
 
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.kevinnzou/compose-webview-multiplatform.svg)](https://search.maven.org/artifact/io.github.kevinnzou/compose-webview-multiplatform)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.kevinnzou/compose-swipebox-multiplatform.svg)](https://search.maven.org/artifact/io.github.kevinnzou/compose-swipebox-multiplatform)
 [![Kotlin](https://img.shields.io/badge/kotlin-v1.9.10-blue.svg?logo=kotlin)](http://kotlinlang.org)
 [![Compose Multiplatform](https://img.shields.io/badge/Compose%20Multiplatform-v1.5.1-blue)](https://github.com/JetBrains/compose-multiplatform)
 
@@ -13,14 +13,14 @@ It provides a composable widget SwipeBox that can be swiped left or right to sho
 action buttons. It supports the custom designs for the action buttons. It also provides the
 composable widgets SwipeIcon and SwipeText for easy design of action buttons.
 
-<img src="media/swipebox.gif" width=300> <img src="media/swipeboxlist.gif" width=300>
+<img src="readme_images/swipebox.gif" width=300> <img src="readme_images/swipeboxlist.gif" width=300>
 
 # Usage
 
 The core component of this library is
-the [SwipeBox](https://github.com/KevinnZou/compose-swipeBox/blob/main/swipebox/src/main/java/com/kevinnzou/compose/swipebox/SwipeBox.kt)
+the [SwipeBox](https://github.com/KevinnZou/compose-swipebox-multiplatform/blob/main/swipebox/src/commonMain/kotlin/com/kevinnzou/swipebox/SwipeBox.kt)
 Please refer to the comment at the top of this file for detail usage. Also, you can refer
-to [SwipeBoxExample](https://github.com/KevinnZou/compose-swipeBox/blob/main/app/src/main/java/com/kevinnzou/compose/composeswipebox/SwipeBoxExample.kt)
+to [BasicSwipeBoxSample](https://github.com/KevinnZou/compose-swipebox-multiplatform/blob/main/sample/shared/src/commonMain/kotlin/com/kevinnzou/sample/BasicSwipeBoxSample.kt)
 for more examples.
 
 At all, it is very easy to use:
@@ -134,7 +134,7 @@ var currentSwipeState: SwipeableState<Int>? by remember {
 ```
 
 Second, we need to define a nestedScrollConnection and set it to the modifier nestedscroll of the list so that we can intercept the scroll event
-and make the current opeing box swipe backward.
+and make the current opening box swipe backward.
 ```kotlin
 val nestedScrollConnection = remember {
     object : NestedScrollConnection {
@@ -192,11 +192,11 @@ SwipeBox(onSwipeStateChanged){  state, _, _ ->
     }
 }
 ```
-After that, your list will react to the list scroll and update the swipeboxs' states.
-For full example, please refer to [SwipeBoxList](https://github.com/KevinnZou/compose-swipeBox/blob/main/app/src/main/java/com/kevinnzou/compose/composeswipebox/SwipeBoxList.kt)
+After that, your list will react to the list scroll and update the swipebox's state.
+For full example, please refer to [SwipeBoxListSample](https://github.com/KevinnZou/compose-swipebox-multiplatform/blob/main/sample/shared/src/commonMain/kotlin/com/kevinnzou/sample/SwipeBoxListSample.kt)
 
 # Download
-[![Maven Central](https://img.shields.io/maven-central/v/io.github.kevinnzou/compose-swipebox.svg)](https://search.maven.org/artifact/io.github.kevinnzou/compose-swipebox)
+[![Maven Central](https://img.shields.io/maven-central/v/io.github.kevinnzou/compose-swipebox-multiplatform.svg)](https://search.maven.org/artifact/io.github.kevinnzou/compose-swipebox-multiplatform)
 
 The Current Release Version is 1.2.0. For future release, please refer to the release session of the
 github repository.
