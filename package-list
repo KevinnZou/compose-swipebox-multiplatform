@@ -1,5 +1,6 @@
 $dokka.format:html-v1
 $dokka.linkExtension:html
-$dokka.location:////PointingToDeclaration/lib/[root]/index.html
-$dokka.location://getPlatformName/#/PointingToDeclaration/lib/[root]/get-platform-name.html
 
+module:swipebox
+com.kevinnzou.swipebox
+com.kevinnzou.swipebox.widget
