@@ -198,8 +198,33 @@ For full example, please refer to [SwipeBoxListSample](https://github.com/Kevinn
 # Download
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.kevinnzou/compose-swipebox-multiplatform.svg)](https://search.maven.org/artifact/io.github.kevinnzou/compose-swipebox-multiplatform)
 
-The Current Release Version is 1.2.0. For future release, please refer to the release session of the
-github repository.
+You can add this library to your project using Gradle.
+
+### Multiplatform
+
+To add to a multiplatform project, add the dependency to the common source-set:
+
+```kotlin
+repositories {
+    mavenCentral()
+}
+
+kotlin {
+    sourceSets {
+        commonMain {
+            dependencies {
+                // use api since the desktop app need to access the Cef to initialize it.
+                api("io.github.kevinnzou:compose-swipebox-multiplatform:1.0.0")
+            }
+        }
+    }
+}
+```
+
+### Single Platform
+
+For an Android only project, you directly can use my another library [compose-swipeBox](https://github.com/KevinnZou/compose-swipeBox).
+Add the dependency to app level `build.gradle.kts`:
 
 ``` kotlin
 allprojects {
@@ -209,7 +234,7 @@ allprojects {
 }
 
 dependencies {
-    implementation("io.github.kevinnzou:compose-swipebox-multiplatform:1.0.0")
+    implementation("io.github.kevinnzou:compose-swipebox:1.2.0")
 }
 
 ```
