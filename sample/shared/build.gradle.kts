@@ -28,7 +28,7 @@ kotlin {
                 implementation(compose.material)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
-                api(project(":lib"))
+                api(project(":swipebox"))
             }
         }
         val androidMain by getting {

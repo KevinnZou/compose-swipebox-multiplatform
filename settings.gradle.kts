@@ -1,7 +1,7 @@
-rootProject.name = "compose-multiplatform-library-template"
+rootProject.name = "compose-swipebox-multiplatform"
 
 include(":sample:androidApp")
-include(":lib")
+include(":swipebox")
 include(":sample:desktopApp")
 include(":sample:shared")
 
