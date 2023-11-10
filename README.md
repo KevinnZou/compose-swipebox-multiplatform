@@ -213,8 +213,7 @@ kotlin {
     sourceSets {
         commonMain {
             dependencies {
-                // use api since the desktop app need to access the Cef to initialize it.
-                api("io.github.kevinnzou:compose-swipebox-multiplatform:1.0.0")
+                implementation("io.github.kevinnzou:compose-swipebox-multiplatform:1.0.0")
             }
         }
     }
