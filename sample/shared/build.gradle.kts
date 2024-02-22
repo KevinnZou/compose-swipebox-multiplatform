@@ -1,3 +1,5 @@
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
+
 plugins {
     kotlin("multiplatform")
     id("com.android.library")
@@ -5,6 +7,17 @@ plugins {
 }
 
 kotlin {
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        moduleName = "composeSwipeBoxSample"
+        browser {
+            commonWebpackConfig {
+                outputFileName = "composeSwipeBoxSample.js"
+            }
+        }
+        binaries.executable()
+    }
+
     androidTarget()
 
     jvm("desktop")
@@ -26,6 +39,7 @@ kotlin {
                 implementation(compose.runtime)
                 implementation(compose.foundation)
                 implementation(compose.material)
+                implementation(compose.ui)
                 @OptIn(org.jetbrains.compose.ExperimentalComposeLibrary::class)
                 implementation(compose.components.resources)
                 api(project(":swipebox"))
@@ -73,4 +87,8 @@ android {
     kotlin {
         jvmToolchain(17)
     }
+}
+
+compose.experimental {
+    web.application {}
 }
