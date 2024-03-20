@@ -1,4 +1,5 @@
 import com.vanniktech.maven.publish.SonatypeHost
+import org.jetbrains.kotlin.gradle.targets.js.dsl.ExperimentalWasmDsl
 
 plugins {
     kotlin("multiplatform")
@@ -9,6 +10,17 @@ plugins {
 }
 
 kotlin {
+    @OptIn(ExperimentalWasmDsl::class)
+    wasmJs {
+        moduleName = "composeSwipeBox"
+        browser {
+            commonWebpackConfig {
+                outputFileName = "composeSwipeBox.js"
+            }
+        }
+        binaries.executable()
+    }
+
     androidTarget() {
         publishLibraryVariants("release")
     }
